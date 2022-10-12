@@ -19,18 +19,6 @@ on:
         type: boolean
 
 jobs:
-  test:
-    if: ${{ github.event.inputs.skip-test }} == true
-    runs-on: ubuntu-latest
-    steps:
-      - name: Test Go
-        run: go test -v ./...
-  build:
-    if: ${{ github.event.inputs.skip-build }} == true
-    runs-on: ubuntu-latest
-    steps:
-      - name: Build Go
-        run: go build -v ./...
   publish:
    runs-on: ubuntu-latest
    steps:
