@@ -2,10 +2,29 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Build') {
+
+            environment {
+                VERSION="AAA"
+            }
+
+            agent {
+                docker {
+                    image 'alpine:latest'
+
+            }
+
             steps {
                 echo 'Hello World'
                 sh 'echo 1'
+                sh 'ubane -a'
+            }
+        }
+
+        stage('Tesst') {
+            steps {
+                echo 'Hello World from test'
+            }
             }
         }
     }
