@@ -19,13 +19,13 @@ pipeline {
                 sh 'echo 1'
                 sh 'ubane -a'
             }
-        
+        }
 
         stage('Tesst') {
             steps {
                 echo 'Hello World from test'
             }
             }
-        }
+        
     }
 }
