@@ -11,7 +11,7 @@ pipeline {
             agent {
                 docker {
                     image 'alpine:latest'
-
+                }
             }
 
             steps {
@@ -19,7 +19,7 @@ pipeline {
                 sh 'echo 1'
                 sh 'ubane -a'
             }
-        }
+        
 
         stage('Tesst') {
             steps {
